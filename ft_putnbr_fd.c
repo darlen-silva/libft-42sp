@@ -19,21 +19,3 @@ void	ft_putnbr_fd(int n, int fd)
 			ft_putchar_fd(n + '0', fd);
 	}
 }
-
-#include <fcntl.h>
-int main(void)
-{
-	int fd;
-	ft_putnbr_fd(-2147483648, 1);
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(-243, 1);
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(-0, 1);
-	ft_putchar_fd('\n', 1);
-	ft_putnbr_fd(-1, 1);
-	ft_putchar_fd('\n', 1);
-	fd = open("testputnbr", O_WRONLY | O_CREAT, 0777);
-	ft_putnbr_fd(54344, fd);
-	close(fd);
-	return 0;
-}

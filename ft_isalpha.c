@@ -1,4 +1,4 @@
-int	isalpha(int ch)
+int	ft_isalpha(int ch)
 {
 	if ((ch < 65 || ch > 122) || (ch > 90 && ch < 97))
 	{

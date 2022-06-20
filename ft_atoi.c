@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dardo-na <dardo-na@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/18 21:02:46 by dardo-na          #+#    #+#             */
+/*   Updated: 2022/06/18 21:02:50 by dardo-na         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 int	ft_atoi(const char *nptr)
 {
 	int	val;
@@ -19,16 +31,4 @@ int	ft_atoi(const char *nptr)
 		nptr++;
 	}
 	return (val * sign);
-}
-
-#include <stdio.h>
-int main(int ac, char **av)
-{
-	int a = 0;
-
-	if (ac == 2)
-	{
-		a = ft_atoi(av[1]);
-	}
-	printf("%d\n", a);
 }

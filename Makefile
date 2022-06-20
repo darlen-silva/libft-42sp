@@ -12,9 +12,9 @@ OBJS			= $(SRCS:.c=.o)
 					ft_lstmap.c ft_lstnew.c ft_lstsize.c
 # BONUS_OBJS		= $(BONUS:.c=.o)
 
-CC				= gcc
+CC				= clang
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+CFLAGS			= -Wall -Wextra -Werror
 
 NAME			= libft.a
 

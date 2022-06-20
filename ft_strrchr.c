@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*tmp;
@@ -25,18 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)s);
 	return (tmp);
 }
-
-#include <stdio.h>
-#include <string.h>
-
-int main(void)
-{
-	char s1[] = "striring";
-	char s2[] = "striring";
-	char c = 't';
-
-	printf("%s\n", ft_strrchr(s1, c));
-	printf("%s\n", strrchr(s2, c));
-
-}
-

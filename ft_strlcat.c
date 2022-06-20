@@ -35,5 +35,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	}
 	if (dest_len >= size)
 			dest_len = size;
-	return (dest_len+ src_len);
+	return (dest_len + src_len);
 }

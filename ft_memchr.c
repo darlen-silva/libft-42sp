@@ -1,3 +1,5 @@
+#include <stddef.h>
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t	count;
@@ -7,7 +9,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	str = (unsigned char *)s;
 	aux = (unsigned char)c;
 	count = 0;
-	while (i < n)
+	while (count < n)
 	{
 		if (*str == aux)
 			return (str);

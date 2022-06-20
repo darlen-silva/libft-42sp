@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+
 char	*ft_strchr(const char *s, int c)
 {
 	while (*s)
@@ -21,17 +23,4 @@ char	*ft_strchr(const char *s, int c)
 	if (!c && *s == '\0')
 		return ((char *)s);
 	return (NULL);
-}
-
-#include <stdio.h>
-#include <string.h>
-
-int main(void)
-{
-	char	s1[] = "hello";
-	char	s2[] = "hello";
-	char	c = 't';
-
-	printf("%s\n", ft_strchr(s1, c));
-	printf("%s\n", strchr(s2, c));
 }

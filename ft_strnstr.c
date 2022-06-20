@@ -39,13 +39,3 @@ char	*ft_strnstr(const char	*big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
-int main(void)
-{
-	char	big[] = "oi meu chapa";
-	char	lile[] = "me";
-	// char	t = 139;
-
-	printf("%s\n", ft_strnstr(big, lile, 3));
-	// printf("%x\n", t);
-}
