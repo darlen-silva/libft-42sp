@@ -12,7 +12,7 @@ OBJS			= $(SRCS:.c=.o)
 					ft_lstmap.c ft_lstnew.c ft_lstsize.c
 # BONUS_OBJS		= $(BONUS:.c=.o)
 
-CC				= clang
+CC				= gcc
 RM				= rm -f
 CFLAGS			= -Wall -Wextra -Werror
 
@@ -30,6 +30,10 @@ fclean:			clean
 				$(RM) $(NAME)
 
 re:				fclean $(NAME)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
 bonus:			$(OBJS) $(BONUS_OBJS)
 				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
