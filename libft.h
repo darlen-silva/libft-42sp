@@ -6,15 +6,15 @@
 /*   By: dardo-na <dardo-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 00:56:26 by dardo-na          #+#    #+#             */
-/*   Updated: 2022/06/13 00:56:35 by dardo-na         ###   ########.fr       */
+/*   Updated: 2022/06/22 01:52:39 by dardo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-#define LIBFT_H
+# define LIBFT_H
 
-#include <unistd.h>
-#include <stdlib.h>
+# include <unistd.h>
+# include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n);
 

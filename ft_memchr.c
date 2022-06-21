@@ -1,8 +1,20 @@
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dardo-na <dardo-na@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/22 01:43:21 by dardo-na          #+#    #+#             */
+/*   Updated: 2022/06/22 01:43:41 by dardo-na         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	count;
+	size_t			count;
 	unsigned char	*str;
 	unsigned char	aux;
 
