@@ -6,14 +6,14 @@
 /*   By: dardo-na <dardo-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 21:02:46 by dardo-na          #+#    #+#             */
-/*   Updated: 2022/06/18 21:02:50 by dardo-na         ###   ########.fr       */
+/*   Updated: 2022/06/22 00:26:08 by dardo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *nptr)
 {
-	int	val;
-	int	sign;
+	long int	val;
+	int			sign;
 
 	val = 0;
 	sign = 1;
