@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	count_words(const char *s, char delimiter)
+static int	wordsnum(const char *s, char delimiter)
 {
 	size_t	words;
 
@@ -34,15 +34,15 @@ static int	count_words(const char *s, char delimiter)
 	return (words);
 }
 
-void	*rollback(char **morsels)
+void	*makefree(char **str)
 {
-	while (*morsels)
-		free(*morsels);
-	free(morsels);
+	while (*str)
+		free(*str);
+	free(str);
 	return (NULL);
 }
 
-char	**write_words(char **morsels, const char *s, char delimiter)
+char	**putword(char **str, const char *s, char delimiter)
 {
 	size_t	length;
 	size_t	i;
@@ -53,13 +53,13 @@ char	**write_words(char **morsels, const char *s, char delimiter)
 		length = 0;
 		while (s[length] != delimiter && s[length])
 			length++;
-		morsels[i] = (char *) malloc(length * sizeof(char) + 1);
-		if (morsels[i] == NULL)
-			return (rollback(morsels));
-		morsels[i][length] = '\0';
+		str[i] = (char *) malloc(length * sizeof(char) + 1);
+		if (str[i] == NULL)
+			return (makefree(str));
+		str[i][length] = '\0';
 		while (length > 0)
 		{
-			morsels[i][length - 1] = s[length - 1];
+			str[i][length - 1] = s[length - 1];
 			length--;
 		}
 		while (*s != delimiter && *s)
@@ -68,21 +68,21 @@ char	**write_words(char **morsels, const char *s, char delimiter)
 			s++;
 		i++;
 	}
-	return (morsels);
+	return (str);
 }
 
 char	**ft_split(char const *s, char delimiter)
 {
-	char	**morsels;
+	char	**str;
 	size_t	words;
 
-	words = count_words(s, delimiter);
-	morsels = (char **) malloc((words + 1) * sizeof(char *));
-	if (morsels == NULL)
+	words = wordsnum(s, delimiter);
+	str = (char **) malloc((words + 1) * sizeof(char *));
+	if (str == NULL)
 		return (NULL);
 	while (*s == delimiter && *s)
 		s++;
-	morsels = write_words(morsels, s, delimiter);
-	morsels[words] = NULL;
-	return (morsels);
+	str = putword(str, s, delimiter);
+	str[words] = NULL;
+	return (str);
 }

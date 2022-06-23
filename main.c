@@ -20,7 +20,7 @@
 #include <limits.h>
 #include "libft.h"
 
-/*void	ft_clean(void *content)
+void	ft_clean(void *content)
 {
 	printf("Freeing : %i\n", *((int*)content));
 }
@@ -50,7 +50,7 @@ char	ft_test(unsigned int i, char c)
 	i = 0;
 	return (c - 32);
 }
-*/
+
 int		main(void)
 {
 	printf("Test de ft_memset :\n");
@@ -341,7 +341,7 @@ int		main(void)
 	ft_putnbr_fd(-593, fd);
 	close(fd);
 	printf("\nVerifier : 'b' dans testputchar, 'def' dans testputstr, 'ghi + nl' dans testputendl, '-593' dans testputnbr\n");
-/*
+
 	printf("\nBONUS LISTS !\n");
 	int		tab[20];
 	t_list	*begin;
@@ -430,5 +430,5 @@ int		main(void)
 	}
 
 	printf("\n");
-	return (0);*/
+	return (0);
 }
