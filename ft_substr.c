@@ -6,7 +6,7 @@
 /*   By: dardo-na <dardo-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 01:54:06 by dardo-na          #+#    #+#             */
-/*   Updated: 2022/06/22 01:54:07 by dardo-na         ###   ########.fr       */
+/*   Updated: 2023/06/16 17:14:59 by dardo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	slen;
 	size_t	i;
 
-	slen = ft_strlen(s);
 	if (s == NULL)
 		return (NULL);
+	slen = ft_strlen(s);
 	if (start >= slen)
 		return (ft_strdup(""));
 	if (slen - start < len)

@@ -6,11 +6,10 @@
 /*   By: dardo-na <dardo-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 01:40:52 by dardo-na          #+#    #+#             */
-/*   Updated: 2023/06/16 17:09:45 by dardo-na         ###   ########.fr       */
+/*   Updated: 2023/06/16 17:39:20 by dardo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 char	**chunk_aloc(char const *s, int del, size_t len)
