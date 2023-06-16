@@ -6,83 +6,60 @@
 /*   By: dardo-na <dardo-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 01:40:52 by dardo-na          #+#    #+#             */
-/*   Updated: 2022/06/22 01:40:53 by dardo-na         ###   ########.fr       */
+/*   Updated: 2023/06/16 17:09:45 by dardo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-static int	wordsnum(const char *s, char delimiter)
+char	**chunk_aloc(char const *s, int del, size_t len)
 {
-	size_t	words;
-
-	words = 0;
-	if (*s == '\0')
-		return (words);
-	if (delimiter == '\0')
-		return (1);
-	while (*s == delimiter && *s)
-		s++;
-	while (*s)
-	{
-		words++;
-		while (*s != delimiter && *s)
-			s++;
-		while (*s == delimiter && *s)
-			s++;
-	}
-	return (words);
-}
-
-void	*makefree(char **str)
-{
-	while (*str)
-		free(*str);
-	free(str);
-	return (NULL);
-}
-
-char	**putword(char **str, const char *s, char delimiter)
-{
-	size_t	length;
+	char	**split;
+	size_t	count;
 	size_t	i;
 
-	i = 0;
-	while (*s)
+	i = -1;
+	count = 0;
+	while (++i < len)
 	{
-		length = 0;
-		while (s[length] != delimiter && s[length])
-			length++;
-		str[i] = (char *) malloc(length * sizeof(char) + 1);
-		if (str[i] == NULL)
-			return (makefree(str));
-		str[i][length] = '\0';
-		while (length > 0)
-		{
-			str[i][length - 1] = s[length - 1];
-			length--;
-		}
-		while (*s != delimiter && *s)
-			s++;
-		while (*s == delimiter && *s)
-			s++;
-		i++;
+		if (s[i] == del)
+			continue ;
+		while (s[i] != del && i < len)
+			i++;
+		count++;
 	}
-	return (str);
+	split = (char **) malloc(sizeof(char *) * (count + 1));
+	if (split == NULL)
+		return (NULL);
+	split[count] = NULL;
+	return (split);
 }
 
 char	**ft_split(char const *s, char delimiter)
 {
-	char	**str;
-	size_t	words;
+	char	**splited_strs;
+	size_t	size;
+	size_t	len;
+	size_t	i;
+	size_t	j;
 
-	words = wordsnum(s, delimiter);
-	str = (char **) malloc((words + 1) * sizeof(char *));
-	if (str == NULL)
-		return (NULL);
-	while (*s == delimiter && *s)
-		s++;
-	str = putword(str, s, delimiter);
-	str[words] = NULL;
-	return (str);
+	j = 0;
+	i = -1;
+	len = ft_strlen(s);
+	splited_strs = chunk_aloc(s, delimiter, len);
+	while (++i < len)
+	{
+		size = 0;
+		if (s[i] == delimiter)
+			continue ;
+		while (s[i] != delimiter && i < len)
+		{
+			size++;
+			i++;
+		}
+		splited_strs[j] = ft_substr(&s[i - size], 0, size);
+		j++;
+	}
+	return (splited_strs);
 }
