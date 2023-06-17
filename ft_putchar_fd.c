@@ -6,7 +6,7 @@
 /*   By: dardo-na <dardo-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 01:39:05 by dardo-na          #+#    #+#             */
-/*   Updated: 2022/06/22 01:39:26 by dardo-na         ###   ########.fr       */
+/*   Updated: 2023/06/16 23:53:27 by dardo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	if (write(fd, &c, 1) == -1)
+		return ;
 }

@@ -6,7 +6,7 @@
 /*   By: dardo-na <dardo-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 00:41:38 by dardo-na          #+#    #+#             */
-/*   Updated: 2022/06/22 02:36:47 by dardo-na         ###   ########.fr       */
+/*   Updated: 2023/06/16 23:54:07 by dardo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@ void	ft_putstr_fd(char *s, int fd)
 	int	len;
 
 	len = ft_strlen(s);
-	write(fd, s, len);
+	if (write(fd, s, len) == -1)
+		return ;
 }

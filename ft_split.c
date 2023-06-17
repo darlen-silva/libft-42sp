@@ -6,13 +6,13 @@
 /*   By: dardo-na <dardo-na@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 01:40:52 by dardo-na          #+#    #+#             */
-/*   Updated: 2023/06/16 17:39:20 by dardo-na         ###   ########.fr       */
+/*   Updated: 2023/06/17 13:31:28 by dardo-na         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**chunk_aloc(char const *s, int del, size_t len)
+static char	**chunk_aloc(char const *s, int del, size_t len)
 {
 	char	**split;
 	size_t	count;
@@ -57,7 +57,7 @@ char	**ft_split(char const *s, char delimiter)
 			size++;
 			i++;
 		}
-		splited_strs[j] = ft_substr(&s[i - size], 0, size);
+		splited_strs[j] = ft_substr(s, (i - size), size);
 		j++;
 	}
 	return (splited_strs);
